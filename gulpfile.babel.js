@@ -87,7 +87,6 @@ function genHtmlFile(config) {
 const tasks = {
   clean: 'clean',
   copy: 'copy-common-files',
-  buildLib: 'build-library',
   build: 'build',
   genHtmlFile: 'genHtmlFile',
   run: 'run'
@@ -109,59 +108,6 @@ gulp.task('copy-common-files', function(cb) {
   return cb();
 });
 
-// gulp.task('build-library', ['copy-common-files'], function(cb) {
-gulp.task('build-library', function(cb) {
-  webpack({
-    entry: './src/js/Button/index.js',
-    output: {
-      path: path.join(ASSETS_PATH, 'js/common'),
-      filename: FILENAMES.btnLib + '.js',
-      libraryTarget: "umd",
-      library: "MyButton"
-    },
-    externals: [{
-      'react': {
-        root: 'React',
-        commonjs2: 'react',
-        commonjs: 'react',
-        amd: 'react'
-      }
-    }, {
-      'react-dom': {
-        root: 'ReactDOM',
-        commonjs2: 'react-dom',
-        commonjs: 'react-dom',
-        amd: 'react-dom'
-      }
-    }, {
-      'react-bootstrap': {
-        root: 'ReactBootstrap',
-        commonjs2: 'react-bootstrap',
-        commonjs: 'react-bootstrap',
-        amd: 'react-bootstrap'
-      }
-    }],
-    resolve: {
-      extensions: ['', '.jsx', '.js']
-    },
-    module: {
-      loaders: [{
-        test: /\.js$/,
-        loader: 'babel',
-        exclude: /node_modules/,
-        query: {
-          presets: ['react', 'es2015', 'stage-0']
-        }
-      }]
-    }
-  }, function(err, stats) {
-    if (err) throw new gutil.PluginError('webpack error!', err);
-    gutil.log("[build library]", stats.toString());
-    cb();
-  });
-});
-
-// gulp.task('build', ['build-library'], function(cb) {
 gulp.task('build', function(cb) {
   let config = _.assign({}, webpackconfig);
   // config.externals = [];
@@ -200,5 +146,5 @@ gulp.task('run', function(cb) {
 });
 
 gulp.task('default', function(cb) {
-  runSequence(tasks.clean, tasks.copy, tasks.buildLib, tasks.build, tasks.genHtmlFile, tasks.run);
+  runSequence(tasks.clean, tasks.copy, tasks.build, tasks.genHtmlFile, tasks.run);
 });

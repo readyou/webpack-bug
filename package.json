@@ -22,7 +22,6 @@
     "gulp": "^3.9.0",
     "html-webpack-plugin": "^1.6.2",
     "jsx-loader": "^0.13.2",
-    "me.common": "ssh://git@git.sankuai.com/~wuxinlong/me.fe.git#common",
     "node-sass": "^3.4.2",
     "run-sequence": "^1.1.5",
     "sass-loader": "^3.1.1",

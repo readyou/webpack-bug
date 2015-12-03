@@ -46,11 +46,6 @@ default {
       query: {
         presets: ['react', 'es2015', 'stage-0']
       }
-    }
-    // , {
-    //   test: /\/react\//,
-    //   loader: "expose?React"
-    // }
-    ]
+    }]
   },
 };
