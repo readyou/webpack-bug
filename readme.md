@@ -4,7 +4,7 @@ $> npm install
 ### start
 $> gulp
 
-### Explanation
+### Changes from branch 'normal1'
 In this branch, the 'webpack.config.js' is a bit different.
 
 1. I just put 'react' and 'react-dom' to config.externals. 
