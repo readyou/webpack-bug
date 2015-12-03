@@ -7,6 +7,8 @@ $> gulp
 ### Explanation
 In this branch, the 'webpack.config.js' is a bit different.
 
+1. I just put 'react' and 'react-dom' to config.externals. 
+
 ```javascript
 externals: [{
     'react': {
@@ -25,6 +27,12 @@ externals: [{
   }],
 ```
 
-I just put 'react' and 'react-dom' to config.externals. And the following error occured.
+2. I include the source files of 'react' and 'react-dom' in the index.html.
+
+```
+<script type="text/javascript" src="/js/common/react.min.js"></script><script type="text/javascript" src="/js/common/react-dom.min.js"></script><script type="text/javascript" src="/js/common/react-bootstrap.min.js"></script><script type="text/javascript" src="/js/bundle.f25aaaa0.js">
+```
+
+And the following error occured.
 
   Uncaught TypeError: Cannot read property 'Component' of undefined
