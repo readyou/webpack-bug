@@ -1,3 +1,6 @@
+### checkout
+To checkout to different branch and run 'npm install && gulp', open the browser to view.
+
 ### install 
 $> npm install
 
