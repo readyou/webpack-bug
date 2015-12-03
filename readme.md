@@ -35,4 +35,4 @@ externals: [{
 
 And the following error occured.
 
-  Uncaught TypeError: Cannot read property 'Component' of undefined
+  ```Uncaught TypeError: Cannot read property 'Component' of undefined```
