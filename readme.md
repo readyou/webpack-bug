@@ -23,7 +23,8 @@ $> gulp
     <script type="text/javascript" src="/js/common/react.min.js"></script>
     <script type="text/javascript" src="/js/common/react-dom.min.js"></script>
     <script type="text/javascript" src="/js/common/react-bootstrap.min.js"></script>
-    <script type="text/javascript" src="/js/bundle.f25aaaa0.js">
+    <script type="text/javascript" src="/js/common/button.js"></script>
+    <script type="text/javascript" src="/js/bundle.466adffe.js"></script>
     ```
 
 And everything is ok again.
